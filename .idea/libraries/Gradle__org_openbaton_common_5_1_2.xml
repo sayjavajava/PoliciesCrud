@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openbaton:common:5.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openbaton/common/5.1.2/bb196075fabf65946335f8ddacf65b5ff56d3bcc/common-5.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openbaton/common/5.1.2/8d149b0f7bec1e97c01831f8ab31294e4e2538c/common-5.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

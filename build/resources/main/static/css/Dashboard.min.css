@@ -1,0 +1,32 @@
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+/*!
+ *   AdminLTE v2.0.1
+ *   Author: Almsaeed Studio
+ *	 Website: Almsaeed Studio <http://almsaeedstudio.com>
+ *   License: Open source - MIT
+ *           Please visit http://opensource.org/licenses/MIT for more information
+!*/
+/*
+ * Core: Genral Layout Style
+ * -------------------------
+ */
+html,
+body {
+  min-height: 100%;
+}
+.layout-boxed html,
+.layout-boxed body {
+  height: 100%;
+}
+#arcadialogo{
+	
+	vertical-align: middle;
+    width: 169px;
+	border-radius: 30%;
+	margin-top: 5px;
+}
+#searchbar
+{
+	    margin-top: -25px;
+}
+ 

@@ -1,0 +1,329 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div th:replace="template::stylesheet">
+
+    </div>
+<script>
+
+    $(document).ready(function () {
+        $("#action").hide();
+
+        $(".atrigger").click(function () {
+            $("#trigger").show();
+            $("#action").hide();
+            $(this).addClass('active')
+            $('.aaction').removeClass('active');            
+        });
+
+        $(".aaction").click(function () {
+            $("#trigger").hide();
+            $("#action").show();
+            $(this).addClass('active')
+            $('.atrigger').removeClass('active');            
+        });
+
+
+    });
+
+</script>
+
+</head>
+
+<div id="componentdesign" class="skin-blue">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+    
+
+        <!-- Main content -->
+        <section style="margin-top: -15px; margin-left: 23px; margin-right: 11px;"id="main">
+			<br>
+            <h3>Security Functions/Services<br/>
+                <small></small>
+            </h3>
+
+            <ul class="secondary">
+                <li><a id="menu-dashboard" class="active atrigger" href="#">Trigger</a></li>
+                <li><a id="menu-applications" class="aaction" href="#">Action</a></li>
+            </ul>
+
+            <ul id="trigger" class="card">
+
+
+                <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>DataPlaneInspection</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbgf</span></div>
+                    <div class="desc">
+                        <p> Collect application monitoring metrics</p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">Monitoring</li>
+                        <li class="value">Detection</li>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>IntrusionDetection</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbgg</span></div>
+                    <div class="desc">
+                        <p> CAPEC-125: Flooding (https://capec.mitre.org/data/definitions/125.html)</p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">DoS</li>
+                        <li class="value">Flooding</li>
+                        </li>
+                    </ul>
+                </li>                
+                
+                <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>LocationTrackingEnabler</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbge</span></div>
+                    <div class="desc">
+                        <p> Detect and report location changes</p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">Location</li>
+                        <li class="value">Detection</li>
+                        </li>
+                    </ul>
+                </li>
+                                
+            </ul>
+            
+            <ul id="action" class="card">
+                <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>NotificationService</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbgf</span></div>
+                    <div class="desc">
+                        <p> Send notification</p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">Response</li>
+                        <li class="value">Reaction</li>
+                        </li>
+                    </ul>
+                </li>
+                
+                 <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>IdentityAccessControlEnabler</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbgc</span></div>
+                    <div class="desc">
+                        <p> Identity and Access Control Service</p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">IDM</li>
+                        <li class="value">Access Control</li>
+                        </li>
+                    </ul>
+                </li>                  
+                
+                <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>OpenFlowFWEnabler</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbgf</span></div>
+                    <div class="desc">
+                        <p> SDN </p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">SDN</li>
+                        <li class="value">OpenFlow</li>
+                        </li>
+                    </ul>
+                </li>      
+                
+                 <li class="component" >
+                    <div class="icon"><span class="glyphicon glyphicon-asterisk"></span></div>
+
+                    <div class="actions pull-right">
+                        <a class="btn">
+                            <span class="fa fa-bars"></span> Details</a>
+                        <a class="btn text-danger"><span class="fa fa-ban"></span> Delete</a>
+                    </div>
+                    <!-- <div class="title"><a th:href="${'/component/' + component.id}"><span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNName()}"></span></a> -->
+                    <div class="title"><a>SecurityGroupEnabler</span></a>
+                        <span class="version">1.0</span>
+                        <span class="flavor">ENABLED</span></div>
+                    <div class="author"></div>
+                    <hr/>
+                    <!-- <div class="meta">ID: <span th:text="${component.getComponent().getDescriptiveCNMetadata().getCNID()}"></span></div> -->
+                    <div class="meta">ID: <span>8e47872-hey7383hdbgf</span></div>
+                    <div class="desc">
+                        <p> OpenStack Security Group</p>
+                    </div>
+                    <ul class="label" style="display:inline">
+                        <li class="value">Security Group</li>
+                        <li class="value">OpenStack</li>
+                        </li>
+                    </ul>
+                </li>          
+
+            </ul>
+
+
+        </section>
+
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+
+</div>
+
+<div th:replace="template::script">
+
+</div>
+
+</html>
+
+<!-- <div th:fragment="upload">
+<div th:replace="template::topmenu">
+
+</div>
+
+<div th:replace="template::main-sidebar">
+
+</div>
+<div class="container">
+
+
+
+<section>
+
+<h5>
+/ <a href="/component">component</a> / <a href="/component/upload">upload</a>
+</h5>
+
+<h3><a href="/component">&larr;</a> Components<br/>
+<small>Upload a component</small>
+</h3>
+
+&lt;!&ndash;<div class="wrapper">&ndash;&gt;
+&lt;!&ndash;<div class="form-group">&ndash;&gt;
+&lt;!&ndash;<label for="apikey">Paste your API Key below to continue</label>&ndash;&gt;
+&lt;!&ndash;<input type="password" id="apikey" class="form-control" placeholder="API KEY" autocomplete="off" autofocus="true" required="required"/>&ndash;&gt;
+&lt;!&ndash;<div class="display"></div>&ndash;&gt;
+&lt;!&ndash;</div>&ndash;&gt;
+&lt;!&ndash;</div>&ndash;&gt;
+
+<div class="wrapper" id="upload">
+<label for="file">Select your component (.jar)</label>
+<input id="file" type="file" name="componentJar" multiple="multiple"/>
+<br/>
+<br/>
+<button th:onclick="${'uploadComponent()'}" class="btn button action"><span class="oi oi-data-transfer-download"></span> Upload Component</button>
+</div>
+
+</section>
+
+</div>
+
+&lt;!&ndash;<script type="text/javascript" th:inline="javascript">&ndash;&gt;
+&lt;!&ndash;/*<![CDATA[*/&ndash;&gt;
+
+&lt;!&ndash;$("#apikey").bind('paste', function(event) {&ndash;&gt;
+&lt;!&ndash;var _this = this;&ndash;&gt;
+
+&lt;!&ndash;setTimeout( function() {&ndash;&gt;
+&lt;!&ndash;var key = $(_this).val();&ndash;&gt;
+&lt;!&ndash;validateAPIKeyHandler(key);&ndash;&gt;
+&lt;!&ndash;}, 100);&ndash;&gt;
+&lt;!&ndash;});&ndash;&gt;
+
+&lt;!&ndash;/*]]>*/&ndash;&gt;
+&lt;!&ndash;</script>&ndash;&gt;
+
+
+</div>-->
+

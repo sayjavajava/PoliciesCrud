@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section style="margin-right: 296px;"id="main">
+            <div th:fragment="profile-list">
+                <div class="container">
+
+
+
+                    <section >
+
+                        <a href="#" class="create"><span class="oi oi-pencil"></span> Edit Profile</a>
+
+                        <h5>
+                            / <a href="/account/profile">account</a> / <a href="#">profile</a>
+                        </h5>
+
+                        <h3>Account<br/>
+                            <small>Profile Management</small>
+                        </h3>
+
+                        <div style="background-color:white;padding: 18px;" class="wrapper">
+                            List account profile information
+                        </div>
+
+                    </section>
+
+
+</div>
+</div>
+        </section>
+
+
+    </div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>

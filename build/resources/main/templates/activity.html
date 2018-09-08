@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section  style="margin-top: -15px; margin-left: 23px; margin-right: 11px;"id="main">
+
+            <h5>
+                / <a href="/user">activity</a>
+            </h5>
+
+            <h3>Activity<br/>
+                <small>Recent activity</small>
+            </h3>
+
+
+
+            <div  style="background: none;" class="wrapper" >
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="col-md-2">Category</th>
+                        <th class="col-md-6">Description</th>
+                        <th class="col-md-4">Timestamp</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr >
+                        <td><span class="label label-default" style="text-transform: uppercase" >Applications</span></td>
+                        <td><span ></span>&nbsp;<span style="font-weight: bold; color: #444;">underground Graph</span></td>
+                        <td><span ></span> Mon Mar 19 17:29:21 CET 2018</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+           <!-- <div th:include="inc :: pagination" >
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>-->
+        </section>
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>

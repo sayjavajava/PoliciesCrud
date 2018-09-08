@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section style="margin-top: -15px; margin-left: 23px;padding: 23px; margin-right: 11px;"id="main">
+
+            <h3>New Policy<br/>
+                <small></small>
+            </h3>
+
+
+            <div style="background-color:#fff;padding: 39px;" class="wrapper">
+
+
+               <!-- add policy by waqas-->
+                <form action="/addPolicy" method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">Priorty:</label>
+                        <input type="text" name="priroty" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="runApp">Running Application:</label>
+                        <input type="text" id="runApp" name="runningApplication" />
+                    </div>
+
+
+                     <input type="submit" />
+                </form>
+
+                <!-- Service Policy Form -->
+                <div class="form-group">
+                    <label>Select Running Application </label>
+                    <select>
+                        <option>HeartRateMonitoring</option>
+                        <option>IntergratedAccessControl</option>
+                    </select>
+
+
+                </div>
+
+                <div class="form-group">
+                    <label for="friendlyname">Name:</label>
+                    <input th:value="${null != servicegraphpolicy} ? ${servicegraphpolicy.getFriendlyname()}" type="text" id="friendlyname"
+                           class="form-control" placeholder="Key (Mandatory)"
+                           autocomplete="off"
+                           autofocus="true"
+                           style="display:inline"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="domain">Priority:</label>
+                    <input type="text" id="domain" placeholder="Number"  class="form-control">
+                </div>
+			
+                <div class="form-group">
+                    <label for="domain">Event Source:</label>
+                    <select id="sp"  class="form-control">
+						<option value="">LocationTrackingEnabler</option>
+					
+					</select>
+                </div>
+
+                <div class="form-group">
+                    <label for="domain">Condition:</label>
+                    <select id="sp">
+						<option value="">is-roaming</option>
+						<option value="">distance</option>
+						<option value="">country</option>
+					</select>
+
+                    <select id="sp">
+						<option value="eq">equals</option>
+						<option value="neq">not equals</option>
+						<option value="gt">greater than</option>
+						<option value="lt">less than</option>
+						<option value="contains">contains</option>
+					</select>
+					
+					<input type="text" id="co" placeholder="">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="domain">Command Action:</label>
+                    <select id="actuator" class="form-control">
+                    	<option value="">NotificationService</option>
+						<option value="">IdentityAccessControlEnabler</option>
+						<option value="">OpenFlowFWEnabler</option>
+						<option value="">SecurityGroupEnabler</option>
+					</select>
+                    <select id="sp"  class="form-control">
+						<option value="">DENY</option>
+					
+					</select>
+                    <select id="sp">
+                    	<option value="eq">---target---</option>
+						<option value="eq">user-account</option>
+						<option value="eq">ipv4-addr</option>
+						<option value="eq">ip-connection</option>
+					</select>
+					
+					<input type="text" id="co" placeholder="">					
+					
+                </div>
+
+                <!-- div class="form-group">
+                    <label for="domain">Executed by:</label>
+                    
+				specifier <input type="text" id="co" placeholder="">
+                    
+                </div-->
+                <div class="form-group">
+                    <label for="domain">Command Option:</label>
+                    <select id="sp">
+                    	<option value="eq"></option>
+						<option value="eq">start-time</option>
+						<option value="eq">stop-time</option>
+						<option value="eq">duration</option>
+					</select>
+					
+					<input type="text" id="co" placeholder=""><br>
+										
+					
+                </div>
+
+                <button id="btn-useradd" th:onclick="${null != servicegraphpolicy} ? 'editGraphPolicyHandler()' : 'addServiceGraphPolicyHandler()'"
+                        class="btn action"><span class="oi oi-task"></span> Save
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>

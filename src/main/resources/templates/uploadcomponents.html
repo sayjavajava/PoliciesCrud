@@ -1,0 +1,130 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+
+</head>
+
+<div id="componentdesign" class="skin-blue">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section style="margin-top: -15px; margin-left: 23px; margin-right: 11px;"id="main">
+
+            <a href="/uploadcomponents" class="create">
+                <span class="glyphicon glyphicon-save uploadComp"></span> Upload</a>
+
+
+
+
+            <h5>
+                / <a href="/component/uploaded">component</a>
+            </h5>
+
+            <h3>Components<br/>
+                <small>Available components</small>
+            </h3>
+
+
+            <div style="background-color:white;padding: 39px;" class="wrapper" id="upload">
+                <label for="file">Select your component (.jar)</label>
+                <input id="file" type="file" name="componentJar" multiple="multiple"/>
+                <br/>
+                <br/>
+                <button th:onclick="${'uploadComponent()'}" class="btn button action"><span class="oi oi-data-transfer-download"></span> Upload Component</button>
+            </div>
+        </section>
+
+
+    </div>
+
+</div>
+
+
+<div >
+
+
+</div>
+
+<div th:replace="template::footer">
+
+</div>
+
+<div th:replace="template::script">
+
+</div>
+
+</html>
+
+<!-- <div th:fragment="upload">
+<div th:replace="template::topmenu">
+
+</div>
+
+<div th:replace="template::main-sidebar">
+
+</div>
+<div class="container">
+
+
+
+<section>
+
+<h5>
+/ <a href="/component">component</a> / <a href="/component/upload">upload</a>
+</h5>
+
+<h3><a href="/component">&larr;</a> Components<br/>
+<small>Upload a component</small>
+</h3>
+
+&lt;!&ndash;<div class="wrapper">&ndash;&gt;
+&lt;!&ndash;<div class="form-group">&ndash;&gt;
+&lt;!&ndash;<label for="apikey">Paste your API Key below to continue</label>&ndash;&gt;
+&lt;!&ndash;<input type="password" id="apikey" class="form-control" placeholder="API KEY" autocomplete="off" autofocus="true" required="required"/>&ndash;&gt;
+&lt;!&ndash;<div class="display"></div>&ndash;&gt;
+&lt;!&ndash;</div>&ndash;&gt;
+&lt;!&ndash;</div>&ndash;&gt;
+
+<div class="wrapper" id="upload">
+<label for="file">Select your component (.jar)</label>
+<input id="file" type="file" name="componentJar" multiple="multiple"/>
+<br/>
+<br/>
+<button th:onclick="${'uploadComponent()'}" class="btn button action"><span class="oi oi-data-transfer-download"></span> Upload Component</button>
+</div>
+
+</section>
+
+</div>
+
+&lt;!&ndash;<script type="text/javascript" th:inline="javascript">&ndash;&gt;
+&lt;!&ndash;/*<![CDATA[*/&ndash;&gt;
+
+&lt;!&ndash;$("#apikey").bind('paste', function(event) {&ndash;&gt;
+&lt;!&ndash;var _this = this;&ndash;&gt;
+
+&lt;!&ndash;setTimeout( function() {&ndash;&gt;
+&lt;!&ndash;var key = $(_this).val();&ndash;&gt;
+&lt;!&ndash;validateAPIKeyHandler(key);&ndash;&gt;
+&lt;!&ndash;}, 100);&ndash;&gt;
+&lt;!&ndash;});&ndash;&gt;
+
+&lt;!&ndash;/*]]>*/&ndash;&gt;
+&lt;!&ndash;</script>&ndash;&gt;
+
+
+</div>-->
+

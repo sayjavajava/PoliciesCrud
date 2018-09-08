@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div th:replace="template::stylesheet">
+
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $("#template").hide();
+
+            $(".ainstance").click(function () {
+                $("#instance").show();
+                $("#template").hide();
+            });
+
+            $(".atemplate").click(function () {
+                $("#instance").hide();
+                $("#template").show();
+            });
+
+
+        });
+    </script>
+
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <section  style="margin-top: -15px; margin-left: 23px; margin-right: 11px;"id="main">
+
+            <a href="/addnewtemplate"  class="create">
+			<span  class="glyphicon glyphicon-plus">
+			</span> New Template
+            </a>
+
+            <h5>
+                / <a href="/application">application</a>
+            </h5>
+
+            <h3>Applications<br/>
+                <small>Application template</small>
+            </h3>
+
+            <div style="background-color:white;" class="wrapper">
+                <div class="cy" id="cyGRAPH"></div>
+
+                <div class="metabox">
+
+                    <input id="txtarea" class="form-control" rows="7" cols="40" type="hidden"></input>
+
+                    <div class="form-item" style="color:#eee">
+
+                        <select class="form-control" id="componentsList">
+                            <option>TUBOrionBroker</option>
+                            <option>IAMService</option>
+                            <option>APIGateway</option>
+                            <option>UIHealth</option>
+                        </select>
+                        <br/>
+
+                        <button type="button" class="btn btn-success btn-block" onclick="addNewComp();">Add Component</button>
+                        <br/>
+
+                        <input data-model="configure" data-name="sgid"  type="hidden" id="sgid"/>
+
+                        <input type="hidden" class="form-control" name="nodeID" id="nodeID" placeholder="NID"  readonly="readonly"/>
+                        <input type="hidden" class="form-control" name="nodeCNID" id="nodeCNID" placeholder="NCID"   readonly="readonly"/>
+
+                        <label for="nodeName">Selected Component </label>
+                        <input type="text" class="form-control" name="nodeName" id="nodeName" placeholder="select a component"   readonly="readonly"/>
+                        <br/>
+
+                        <div id="info" style="display: none;" class="panel"> </div>
+
+                        <div id="request"></div>
+
+
+                    </div>
+
+                    <br/>
+                    <div class="form-item">
+
+                        <div class="action-area">
+                            <label for="sgName">Template Name</label>
+                            <input type="text" id="sgName" name="sgName"
+                                   class="form-control" placeholder="e.g. Service Graph 1"
+                                   autocomplete="off"/>
+                            <br/>
+                            <button id="save" type="button" class="btn btn-danger btn-block" onclick="saveJSON();">Save</button>
+                            <button id="refresh" type="button" class="btn btn-default btn-block" onclick="refresh();">Reload</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </section>
+
+
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section style="margin-top: -15px; margin-left: 23px; margin-right: 11px;"id="main">
+        	<br>
+            <a href="/addnewpolicy" class="create"><span class="oi oi-plus"></span> Create New</a>
+            <h3>Security Policies<br/>
+                <small>Event-Condition-Action Policies</small>
+            </h3>
+
+            <div style="background: none;" class="wrapper" >
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+
+
+                        <th class="col-md-3">Name</th>
+                        <th class="col-md-4">Priority</th>
+                        <th class="col-md-4">Running Application </th>
+                        <th class="col-md-6">DELETE</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="pol : ${policyList}">
+                        <td th:text="${pol.name}"></td>
+                        <td th:text="${pol.priroty}"></td>
+                        <td th:text="${pol.runningApplication}"></td>
+                        <td><a th:href="${'/delete/' + pol.id}">Remove order</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>

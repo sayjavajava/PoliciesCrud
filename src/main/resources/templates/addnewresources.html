@@ -1,0 +1,142 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+
+
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+
+
+
+        <section  style="padding: 21px;" id="main">
+
+            <h5>
+                / <a href="/resource">resource</a> / <a th:href="${null == iaasregistration} ? '/resource/add' : '/resource/edit'"><span
+                    th:text="${null == iaasregistration} ? 'add' : 'edit'"></span></a>
+            </h5>
+
+            <h3><a href="/resource">&larr;</a> Resources <span th:text="${null == iaasregistration} ? 'Add' : 'Edit'"></span><br/>
+                <small>Add an IaaS provider to deploy your applications</small>
+            </h3>
+
+            <div style="background-color:white;padding: 57px;"  class="wrapper" th:with="dropdown=${dropdown} != null ? ${dropdown} : (${iaasregistration} != null ? ${iaasregistration.getIaasprovidertype().getId()} : 1)">
+
+                <div class="form-group">
+
+                    <input th:if="${null != iaasregistration}" th:value="${iaasregistration.getId()}" type="hidden" id="iaasregistrationid"/>
+
+                    <label for="iaastypeid">Provider Type: </label>
+                    <select id="iaastypeid" class="form-control" name="iaastypeid" th:onchange="${null == iaasregistration} ? ${'selectOnChange(this)'}" th:disabled="${null != iaasregistration}">
+                        <option> Openstack/v3</option>
+                        <option> Openstack/v2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="friendlyname">Friendly Name:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getFriendlyname()}" type="text" id="friendlyname" class="form-control" placeholder="Friendly Name (Mandatory)" autocomplete="off" autofocus="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="domain">Domain:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getDomain()}" type="text" id="domain" class="form-control" placeholder="Give the name of domain (Mandatory)" autocomplete="off"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="friendlyname" th:text="${dropdown == 1} ? 'Project Name' : 'Tenant Name'">Tenant / Project Name:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getTenantname()}" type="text" id="tenantname" class="form-control" th:placeholder="${dropdown == 1} ? 'Project Name (Mandatory)' : 'Tenant Name (Mandatory)'" placeholder="Tenant / Project Name (Mandatory)" autocomplete="off"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="friendlyname">Username:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getUsername()}" type="text" id="username" class="form-control" placeholder="Username (Mandatory)" autocomplete="off" autofocus="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="friendlyname">Password:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getPassword()}" type="password" id="password" class="form-control" placeholder="Password (Mandatory)" autocomplete="off" autofocus="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="imageurl">Image URL:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getImageURL()}" type="text" id="imageurl" class="form-control" placeholder="e.g. https://some/url/cirros-0.3.0-x86_64-disk.img" autocomplete="off" required="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="oorimageURL">OOR Image URL:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getOorimageURL()}" type="text" id="oorimageURL" class="form-control" placeholder="OOR Image URL (Mandatory)" autocomplete="off" required="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="friendlyname">Endpoint:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getEndpoint()}" type="text" id="endpoint" class="form-control" th:placeholder="${dropdown == 1} ? 'e.g. http://192.168.4.201:5000/v3' : 'e.g. http://192.168.4.201:5000/v2'" placeholder="e.g. http://192.168.4.201:5000/version" autocomplete="off" autofocus="true" required="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="publicNetworkid">Public Network ID:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getPublicNetworkid()}" type="text" id="publicNetworkid" class="form-control" placeholder="Public Network ID (Mandatory)" autocomplete="off" required="true"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="publicsubnetworkid">Public Subnet Network ID:</label>
+                    <input th:value="${null != iaasregistration} ? ${iaasregistration.getPublicsubnetworkid()}" type="text" id="publicsubnetworkid" class="form-control" placeholder="Public Subnet Network ID (Mandatory)" autocomplete="off" required="true"/>
+                </div>
+
+                <div th:if="${iaasregistration == null} or ${#strings.toString(iaasregistration.getStatus())} != 'DEPLOYED'" class="checkbox checkbox-success">
+                    <input type="checkbox" name="urgentInit" id="urgentInit"/>
+                    <label for="urgentInit">
+                        This option enables initialization process after Save action.
+                    </label>
+                </div>
+
+                <br/>
+
+                <button id="btn-useradd" th:onclick="${null != iaasregistration} ? 'editIaaSRegistrationHandler()' : 'addIaaSRegistrationHandler()'"
+                        class="btn action"><span class="oi oi-task"></span> Save
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>

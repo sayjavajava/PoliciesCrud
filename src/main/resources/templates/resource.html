@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div th:replace="template::stylesheet">
+
+    </div>
+
+    <script>
+
+    </script>
+</head>
+
+<body class="skin-blue">
+
+
+<div class="wrapper">
+
+
+    <div th:replace="template::topmenu">
+
+    </div>
+
+    <div th:replace="template::main-sidebar">
+
+    </div>
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section style="margin-top: -15px; margin-left: 23px; margin-right: 11px;"id="main">
+			<br>
+            <h3>Resources<br/>
+                <small></small>
+            </h3>
+
+            <div  style="background: none;"class="wrapper">
+
+                <table id="Providers" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <!--<th class="col-md-1 text-center">ID</th>-->
+                        <th class="col-md-1">Name</th>
+                        <th class="col-md-2">Type</th>
+                        <th class="col-md-3">Registration Date</th>
+                        <th class="col-md-4">Endpoint</th>
+                        <th class="col-md-5">Status</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <!--<td class="text-center"><span th:text="${iaasregistration.getId()}"></span></td>-->
+                        <td><span>NFVO_OpenBaton</span></td>
+                        <td><span>MANO</span></td>
+                        <td><span>Wed Aug 8 2018</span></td>
+                        <td><span>http://locahost:5000/v1</span></td>
+						<td><span>Running</span></td>
+    
+                    </tr>
+                    <tr>
+                        <!--<td class="text-center"><span th:text="${iaasregistration.getId()}"></span></td>-->
+                        <td><span>SC_SecurityController</span></td>
+                        <td><span>Orchestrator</span></td>
+                        <td><span>Wed Aug 8 2018</span></td>
+                        <td><span>http://locahost:8080/orch</span></td>
+						<td><span>Running</span></td>
+    
+                    </tr>
+                  
+                    <tr>
+                        <!--<td class="text-center"><span th:text="${iaasregistration.getId()}"></span></td>-->
+                        <td><span>PubSub_OrionCB</span></td>
+                        <td><span>Context</span></td>
+                        <td><span>Wed Aug 8 2018</span></td>
+                        <td><span>http://locahost:1026/v1</span></td>
+						<td><span>Running</span></td>
+    
+                    </tr>       
+                    
+                    <tr>
+                        <!--<td class="text-center"><span th:text="${iaasregistration.getId()}"></span></td>-->
+                        <td><span>DB_MySQL</span></td>
+                        <td><span>Database</span></td>
+                        <td><span>Wed Aug 8 2018</span></td>
+                        <td><span>tcp://localhost:3306/astrid?useSSL=false</span></td>
+						<td><span>Running</span></td>
+    
+                    </tr>   
+
+                    </tbody>
+                </table>
+
+                
+
+            </div>
+
+
+
+
+        </section>
+
+    </div>
+
+</div>
+</div>
+</div><!-- /.box -->
+
+
+</div>
+
+<div th:replace="template::footer">
+</div>
+
+
+<div th:replace="template::script">
+
+</div>
+
+</body>
+
+</html>
