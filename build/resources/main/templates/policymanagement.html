@@ -49,6 +49,7 @@
                         <td th:text="${pol.name}"></td>
                         <td th:text="${pol.priroty}"></td>
                         <td th:text="${pol.runningApplication}"></td>
+                        <td><a  th:href="@{/policyEdit/__${pol.id}__}">Edit</a></td>
                         <td><a th:href="${'/delete/' + pol.id}">Remove order</a></td>
                     </tr>
                     </tbody>

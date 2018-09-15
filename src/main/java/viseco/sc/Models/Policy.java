@@ -24,6 +24,7 @@ public class Policy {
         this.priroty = priroty;
         this.runningApplication = runningApplication;
     }
+    public Policy(){}
 
 
     public String getId() {
